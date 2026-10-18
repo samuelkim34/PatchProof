@@ -1,0 +1,12 @@
+
+.env
+node_modules/
+.next/
+
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+reports/
+__pycache__/
