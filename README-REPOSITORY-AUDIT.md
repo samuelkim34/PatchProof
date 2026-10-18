@@ -1,20 +1,12 @@
 # PatchProof — Public GitHub Repository Audit (experimental)
 
-This ZIP adds a **new `/repo` page** to the existing Next.js PatchProof project. It does not replace the working guided demo at `/`, your optional `/lab` page, `.env`, existing code, or `next.config.mjs`.
+The `/repo` page is part of this Next.js repository and works alongside the guided demo at `/`. No separate ZIP, Arch Linux setup, or shell-specific installation is required.
 
-## Install (fish / Arch Linux)
+## Installation (macOS, Windows, Linux)
 
-Download ZIP to `~/Downloads`, then from your working PatchProof repository:
+Follow the universal [Quick start](README.md#quick-start-macos-windows-linux): install Node.js 20.9+, clone this repository, run `npm ci`, create `.env` from `.env.example` with your own Gemini and Daytona keys, and run `npm run dev`.
 
-```fish
-cd ~/Projects/patchproof
-git switch -c feature/repository-audit
-python3 -m zipfile -e ~/Downloads/patchproof-repository-audit.zip .
-npm run build
-npm run dev
-```
-
-Open <http://localhost:3000/repo>. Keep `next.config.mjs` configured with `serverExternalPackages: ["@daytona/sdk"]`, as in your already working PatchProof dashboard. Existing Gemini and Daytona keys in `.env` are used server-side. Do not paste them into the browser.
+Visit <http://localhost:3000/repo>. On Windows use PowerShell or Windows Terminal; on macOS/Linux use your normal terminal. Daytona executes Python in its own cloud Linux sandbox, so local Python, Docker, WSL and Linux are not required. Keep `next.config.mjs` configured to externalize `@daytona/sdk` for Node.js server execution.
 
 ## What it actually does
 
